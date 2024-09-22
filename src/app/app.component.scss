@@ -34,23 +34,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-  font-size: 3.125rem;
-  color: var(--gray-900);
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: -0.125rem;
-  margin: 0;
-  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-}
-
-p {
-  margin: 0;
-  color: var(--gray-700);
-}
-
 main {
   width: 100%;
   min-height: 100%;
@@ -71,6 +54,7 @@ main {
   justify-content: space-around;
   width: 100%;
   max-width: 700px;
+  max-height: 1000px;
   margin-bottom: 3rem;
 }
 
@@ -93,24 +77,29 @@ main {
 }
 
 .content td .campos{
-  width: 30%;
+  width: 47%;
   margin-left: 10px;
   float: left;
 }
 
 .content td button{
-  margin-top: 15px;
+  margin-top: -10px;
   margin-left: 10px;
+  border-radius: 20px;
+  margin-bottom: 5px;
 }
 
 .content table {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 
 .content mat-card-footer{
   text-align: left;
+  font-size: 20px;
   margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   color: var(--gray-700);
 }
 
@@ -122,14 +111,6 @@ main {
 .demo-row-is-clicked {
   font-weight: bold;
   background-color: rgb(171, 106, 231);
-}
-
-section {
-  display: table;
-}
-
-button{
-  border-radius: 20px;
 }
 
 .calc-button {
