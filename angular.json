@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "imc_pj": {
+    "IMFacil": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
             "outputPath": "docs",
-            "baseHref": "imc-pj",
+            "baseHref": "/IMFacil/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "imc_pj:build:production"
+              "buildTarget": "IMFacil:build:production"
             },
             "development": {
-              "buildTarget": "imc_pj:build:development"
+              "buildTarget": "IMFacil:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "imc_pj:build"
+            "buildTarget": "IMFacil:build"
           }
         },
         "test": {
