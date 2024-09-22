@@ -15,7 +15,7 @@
   <div class="content">
     <mat-card class="example-card">
       <mat-card-header>
-        <mat-card-title>IMFacil!</mat-card-title>
+        <mat-card-title>IMFácil!</mat-card-title>
         <mat-card-subtitle>Cálculo IMC </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
@@ -62,17 +62,24 @@
       </mat-card-content>
       <mat-card-actions align="start">
         <td>
-          <mat-form-field class="campos">
-            <mat-label>Altura (cm)</mat-label>
-            <input [(ngModel)]="pessoa.altura" matInput #postalCode placeholder="Ex. 1,50" value="">
-          </mat-form-field>
+          <section>
+            <mat-form-field class="campos">
+              <mat-label>Altura (cm)</mat-label>
+              <input [(ngModel)]="pessoa.altura" matInput #postalCode placeholder="Ex. 1,50" value="">
+            </mat-form-field>
 
-          <mat-form-field class="campos">
-            <mat-label>Peso</mat-label>
-            <input [(ngModel)]="pessoa.peso" matInput #postalCode placeholder="Ex. 60,5" value="">
-          </mat-form-field>
+            <mat-form-field class="campos">
+              <mat-label>Peso</mat-label>
+              <input [(ngModel)]="pessoa.peso" matInput #postalCode placeholder="Ex. 60,5" value="">
+            </mat-form-field>
+          </section>
 
-          <button (click)="calcularImc(pessoa)" mat-stroked-button>Calcular</button>
+          <mat-divider></mat-divider>
+
+          <section>
+            <button (click)="calcularImc(pessoa)" mat-stroked-button class="calc-button">Calcular  ></button>
+            <button (click)="limparCampos()" mat-stroked-button class="clear-button">Limpar  ></button>
+          </section>
 
         </td>
       </mat-card-actions>

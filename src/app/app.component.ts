@@ -1,19 +1,11 @@
+import { AgunlarMaterialModule } from './module/agunlar-material.module';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatTableModule } from '@angular/material/table';
+import { Pessoa } from './model/pessoa';
+import { ImcInfo } from './interface/imc-info';
 
-export interface tabelaImc {
-  imc: string;
-  classificacao: String;
-  obesidade: string;
-}
-
-const ELEMENT_DATA: tabelaImc[] = [
+const ELEMENT_DATA: ImcInfo[] = [
   { imc: 'Menor que 18,5', classificacao: 'Magreza', obesidade: '0' },
   { imc: 'Entre 18,5 e 24,9', classificacao: 'Normal', obesidade: '0' },
   { imc: 'Entre 25,0 e 29,9', classificacao: 'Sobrepeso', obesidade: '1' },
@@ -21,32 +13,22 @@ const ELEMENT_DATA: tabelaImc[] = [
   { imc: 'Maior que 40,0', classificacao: 'Obesidade Grave', obesidade: '3' },
 ];
 
-class Pessoa {
-  altura: string = '';
-  peso: string = '';
-  imc: string = '';
-}
-
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
     FormsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatTableModule],
+    AgunlarMaterialModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 
 export class AppComponent {
-  title = 'imc_pj';
+  title = 'IMFácil!';
 
   pessoa = new Pessoa();
-  clickedRows = new Set<tabelaImc>();
+  clickedRows = new Set<ImcInfo>();
 
   displayedColumns: string[] = ['imc', 'classificacao', 'obesidade'];
   dataSource: any[] = ELEMENT_DATA;
@@ -82,5 +64,11 @@ export class AppComponent {
     if (parseFloat(pessoa.imc) >= 40) {
       this.clickedRows.add(ELEMENT_DATA[4]);
     }
+  }
+
+  limparCampos(): void {
+    this.pessoa = new Pessoa();
+    this.clickedRows.clear();
+    this.dataSource = ELEMENT_DATA;
   }
 }

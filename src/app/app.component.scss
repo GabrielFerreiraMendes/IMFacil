@@ -117,6 +117,21 @@ main {
 
 .demo-row-is-clicked {
   font-weight: bold;
-  background-color: rgb(155, 93, 212);
+  background-color: rgb(171, 106, 231);
 }
 
+section {
+  display: table;
+}
+
+button{
+  border-radius: 20px;
+}
+
+.calc-button {
+  background-color: #4e99fc;
+}
+
+.clear-button {
+  background-color: #fda92a;
+}
